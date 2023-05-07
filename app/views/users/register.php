@@ -5,57 +5,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style1.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <title>login page</title>
 </head>
 
 <body>
-    <div>
-        <div class="backgroundimg">
-            <img src="<?php echo URLROOT; ?>/img/background.png" alt="background">
-        </div>
-        <div class="image">
-            <img src="<?php echo URLROOT; ?>/img/signup2.png" alt="SignUp Image" height="500px" width="600px">
-        </div>
+    <div class="logo">
+        <img src="images/logo.png" alt="logo">
     </div>
 
-    <div class="forms-log-container">
-        <div class="signin-signup">
-            <form action="<?php echo URLROOT; ?>/users/register" class="sign-up-form" method="POST">
-                <h1 class="title" >Sign Up</h1>
-                <br>
-                <div class="input-field">
-                    <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="Useremail" name="email" value="<?php echo $data['email']; ?>">
+    <!-- <img class="wave" src="<?php echo URLROOT; ?>/img/wave.svg">   -->
+    <div class="container">
+        <div class="img">
+            <img src="<?php echo URLROOT; ?>/img/sign up.svg">
+        </div>
+        <div class="login-container">
+            <form action="<?php echo URLROOT; ?>/users/register" method="POST">
+                <img class="avatar" src="<?php echo URLROOT; ?>/img/profile_pic.svg">
+
+                <h2>Create Account</h2>
+                <p>Please fill out the following fields to create an account.</p>
+
+                <!-- <div class="input-div one ">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Organization name</h5>
+                        <input type="text" class="input" >
+                    </div>
+                </div> -->
+                <div class="input-div two">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="div">
+                        <h5><label for="email">Email: <sup>*</sup></label></h5>
+                        <input class="input" type="email" name="email" value="<?php echo $data['email']; ?>" required>
+                    </div>
                 </div>
                 <div class="error">
                     <span><?php echo $data['email_err']; ?></span>
                 </div>
-                <div class="input-field">
-                    <i class=" fas fa-lock "></i>
-                    <input type=" text " placeholder="Password " name="password" value="<?php echo $data['password']; ?>">
+                <!-- <div class="input-div one ">
+                    <div class="i">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Telephone number</h5>
+                        <input type="text" class="input" >
+                    </div>
+                    </div>
+                    <div class="input-div one ">
+                        <div class="i">
+                            <i class="fas fa-address-book"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Address</h5>
+                            <input type="text" class="input" >
+                        </div>
+                        </div>-->
+                <div class="input-div one ">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5><label for="password">Password: <sup>*</sup></label></h5>
+                        <input class="input" type="password" name="password" value="<?php echo $data['password']; ?>" required>
+                    </div>
                 </div>
                 <div class="error">
                     <span><?php echo $data['password_err']; ?></span>
                 </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Confirm Password" name="confirm_password"  value="<?php echo $data['confirm_password']; ?>">
+                <div class="input-div one ">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5><label for="confirm_password">Confirm Password: <sup>*</sup></label></h5>
+                        <input class="input" type="password" name="confirm_password" value="<?php echo $data['confirm_password']; ?>" required>
+                    </div>
                 </div>
                 <div class="error">
                     <span><?php echo $data['confirm_password_err']; ?></span>
                 </div>
-                <br>
-                <input type="submit" value="Sign Up" class=" btn solid ">
-                <br>
-                <p class="social-text">Already have an Account? <a href="<?php echo URLROOT; ?>/users/login">Login here</a></p>
+                <input type="submit" class="btn" value="Register">
+                <div class="reminder">
+                    <p>Already have an account? <a href="<?php echo URLROOT; ?>/users/login">Login here</a></p>
                 </div>
             </form>
-
         </div>
+        <script type="text/javascript" src="<?php echo URLROOT; ?>/js/main.js"></script>
     </div>
-
 </body>
 
 </html>
